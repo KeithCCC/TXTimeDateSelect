@@ -11,3 +11,42 @@ Microsoft Windows [Version 10.0.22635.2921]
 
 D:\dev\1.Projects\openai>path
 PATH=c:\Users\chien\AppData\Roaming\Cursor\User\globalStorage\microsoft-isvexptools.powerplatform-vscode\pac\tools;c:\Users\chien\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;D:\dev\OracleDB\dbhomeXE\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\dev\instantclient_21_3;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WI;C:\Program Files (x86)\WinMerge;C:\Users\chien\AppData\Local\Programs\Python\Launcher\;C:\Users\chien\AppData\Local\Microsoft\WindowsApps;C:\Users\chien\AppData\Local\GitHubDesktop\bin;D:\dev\flutter\bin;C:\Users\chien\AppData\Local\Pub\Cache\bin;C:\Users\chien\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\chien\AppData\Roaming\npm;C:\Users\chien\AppData\Local\Programs\Microsoft VS Code\bin
+
+
+
+
+KeyError: 'warnings'
+Traceback:
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 534, in _run_script
+    exec(code, module.__dict__)
+File "D:\dev\1.Projects\TXTimeDateSelect\sb6.py", line 23, in <module>
+    df = init()
+         ^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 212, in wrapper
+    return cached_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 241, in __call__
+    return self._get_or_create_cached_value(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 264, in _get_or_create_cached_value
+    cached_result = cache.read_result(value_key)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\caching\cache_data_api.py", line 641, in read_result
+    entry = pickle.loads(pickled_entry)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 304, in _new_Index
+    return cls.__new__(cls, **d)
+           ^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 521, in __new__
+    data = com.asarray_tuplesafe(data, dtype=_dtype_obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\common.py", line 238, in asarray_tuplesafe
+    with warnings.catch_warnings():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\chien\AppData\Local\Programs\Python\Python312\Lib\warnings.py", line 465, in __init__
+    self._module = sys.modules['warnings'] if module is None else module
+                   ~~~~~~~~~~~^^^^^^^^^^^^
+
+
+
+['d:\\dev\\1.Projects\\TXTimeDateSelect', 'C:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\python312.zip', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\DLLs', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\Lib', '', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\win32', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\win32\\lib', 'c:\\Users\\chien\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Pythonwin']                   

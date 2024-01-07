@@ -10,7 +10,7 @@ def init():
     st.session_state.df = pd.DataFrame(columns=["start", "end"])
     return st.session_state.df
 
-"st.session_state object:", st.session_state
+# "st.session_state object:", st.session_state
 
 today = datetime.datetime.now()
 locale.setlocale(locale.LC_TIME, 'ja_JP.UTF-8')

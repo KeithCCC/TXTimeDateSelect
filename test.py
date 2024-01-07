@@ -1,11 +1,21 @@
+import streamlit as st
 import pandas as pd
 
-# Assuming 'data' is your non-DataFrame object
-data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
+# データを読み込む
+df = pd.DataFrame(
+    [
+       {"command": "st.selectbox", "rating": 4, "is_widget": True},
+       {"command": "st.balloons", "rating": 5, "is_widget": False},
+       {"command": "st.time_input", "rating": 3, "is_widget": True},
+   ]
+)
 
-# Convert 'data' to a DataFrame
-df = pd.DataFrame(data)
+# データを表示する
+if "df" not in st.session_state:
+    st.session_state.df = df
 
-# Now you can use the 'append' method
-new_row = {'A': 7, 'B': 8}
-df = df.append(new_row, ignore_index=True)
+edited_df = st.data_editor(st.session_state.df)
+
+# 変更を保存する
+if st.button("Save Changes"):
+    st.write("Changes saved!")
