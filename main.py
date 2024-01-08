@@ -50,6 +50,8 @@ edited_df = st.data_editor(
     width=800
     )
 
+status = st.radio("Select Gender: ", ('Long', 'Short'))
+
 text_data="List of schedule\r\n"
 # days = ['月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日', '日曜日']
 days = ['月', '火', '水', '木', '金', '土', '日']
@@ -59,11 +61,15 @@ if st.button("Convert"):
     for index, row in st.session_state.df.iterrows():
         start_data = row['start']
         DoWstart = days[start_data.weekday()]
-        str_start = str(start_data.year) + '年' + str(start_data.month) + '月' + str(start_data.day) + '日 (' + DoWstart + ') ' +str(start_data.hour) + ':' + str(start_data.minute) 
+        str_start = str(start_data.year) + '年' + str(start_data.month) + '月' + str(start_data.day) + '日 (' + DoWstart + ') ' +str(start_data.hour).zfill(2) + ':' + str(start_data.minute).zfill(2) 
         
         end_data = row['end']
         DoWend= days[end_data.weekday()]
-        str_end = str(end_data.year) + '年' + str(end_data.month) + '月' + str(end_data.day) + '日 (' + DoWend + ') ' +str(end_data.hour) + ':' + str(end_data.minute) 
+        if status == 'Long':
+            str_end = str(end_data.year) + '年' + str(end_data.month) + '月' + str(end_data.day) + '日 (' + DoWend + ') ' +str(end_data.hour).zfill(2) + ':' + str(end_data.minute).zfill(2) 
+        else:
+            str_end = str(end_data.hour).zfill(2) + ':' + str(end_data.minute).zfill(2) 
+
 
         text_data += f"{str_start} - {str_end} \r\n"
         print (str_start,end_data )
