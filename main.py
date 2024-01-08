@@ -12,9 +12,10 @@ def init():
 
 # "st.session_state object:", st.session_state
 
-st.title('Date to string')
+st.title('Open appointment slot to string')
 
-today = datetime.datetime.now()
+today = datetime.datetime.now().replace(minute=0, second=0, microsecond=0)
+
 # locale.setlocale(locale.LC_TIME, 'ja_JP.UTF-8')
 
 
@@ -29,19 +30,19 @@ df = init()
 if st.button("Add appointment"):
     new_record = pd.DataFrame([{'start': today, 'end': today}])
     st.session_state.df = pd.concat([st.session_state.df, new_record])
-
+thirty_minutes = datetime.timedelta(minutes=30)
 edited_df = st.data_editor(
     st.session_state.df,
         column_config={
         "start": st.column_config.DatetimeColumn(
             "start",
             format="YYYY年MM月DD日 hh:mm",
-            step=30,
+            step=thirty_minutes,
         ),
         "end": st.column_config.DatetimeColumn(
             "end",
             format="YYYY年MM月DD日 hh:mm",
-            step=0,
+            step=thirty_minutes,
         ),
     },
     # hide_index=True,
